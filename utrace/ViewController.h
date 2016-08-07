@@ -15,6 +15,7 @@
 }
 
 - (IBAction)searchBtnClicked:(id)sender;
+- (void)moveMapToLocation:(CLLocationCoordinate2D)location;
 
 @end
 

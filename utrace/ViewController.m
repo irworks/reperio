@@ -19,7 +19,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     [mapView setDelegate:self];
     
-    CLLocationCoordinate2D location = CLLocationCoordinate2DMake(100, 100);
+    CLLocationCoordinate2D location = CLLocationCoordinate2DMake(53, 10);
     [self addMarkerToMapAtLocation:location title:@"Test" subtitle:@"subtitle"];
     [self moveMapToLocation:location];
 }
@@ -33,14 +33,19 @@
 }
 
 - (void)moveMapToLocation:(CLLocationCoordinate2D)location {
-    [mapView setRegion:MKCoordinateRegionMake(location, MKCoordinateSpanMake(0.2, 0.2)) animated:YES];
+    @try {
+        [mapView setRegion:MKCoordinateRegionMake(location, MKCoordinateSpanMake(0.2, 0.2)) animated:YES];
+    } @catch (NSException *exception) {
+        NSLog(@"Invalid region: lat: %f; long: %f", location.latitude, location.longitude);
+    }
 }
 
 - (void)addMarkerToMapAtLocation:(CLLocationCoordinate2D)location title:(NSString *)title subtitle:(NSString *)subtitle {
     MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
-    point.coordinate         = location;
-    point.title              = title;
-    point.subtitle           = title;
+    
+    [point setCoordinate:location];
+    [point setTitle:title];
+    [point setSubtitle:subtitle];
     
     [mapView addAnnotation:point];
 }
