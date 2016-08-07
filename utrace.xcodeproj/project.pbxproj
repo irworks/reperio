@@ -16,6 +16,7 @@
 		F4A4A43D1D57478900A43A15 /* utraceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A4A43C1D57478900A43A15 /* utraceTests.m */; };
 		F4A4A4481D57478900A43A15 /* utraceUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A4A4471D57478900A43A15 /* utraceUITests.m */; };
 		F4A4A4561D574CA100A43A15 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A4A4551D574CA100A43A15 /* MapKit.framework */; };
+		F4A4A4591D57DBD400A43A15 /* MoreInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A4A4581D57DBD400A43A15 /* MoreInfoView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		F4A4A4471D57478900A43A15 /* utraceUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = utraceUITests.m; sourceTree = "<group>"; };
 		F4A4A4491D57478900A43A15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4A4A4551D574CA100A43A15 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		F4A4A4571D57DBD400A43A15 /* MoreInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MoreInfoView.h; path = UI/customUI/MoreInfoView.h; sourceTree = "<group>"; };
+		F4A4A4581D57DBD400A43A15 /* MoreInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MoreInfoView.m; path = UI/customUI/MoreInfoView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				F4A4A4251D57478900A43A15 /* AppDelegate.h */,
+				F4A4A45A1D57DBD800A43A15 /* UI */,
 				F4A4A4261D57478900A43A15 /* AppDelegate.m */,
 				F4A4A4281D57478900A43A15 /* ViewController.h */,
 				F4A4A4291D57478900A43A15 /* ViewController.m */,
@@ -142,6 +146,15 @@
 				F4A4A4491D57478900A43A15 /* Info.plist */,
 			);
 			path = utraceUITests;
+			sourceTree = "<group>";
+		};
+		F4A4A45A1D57DBD800A43A15 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				F4A4A4571D57DBD400A43A15 /* MoreInfoView.h */,
+				F4A4A4581D57DBD400A43A15 /* MoreInfoView.m */,
+			);
+			name = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +290,7 @@
 				F4A4A42A1D57478900A43A15 /* ViewController.m in Sources */,
 				F4A4A4271D57478900A43A15 /* AppDelegate.m in Sources */,
 				F4A4A4241D57478900A43A15 /* main.m in Sources */,
+				F4A4A4591D57DBD400A43A15 /* MoreInfoView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

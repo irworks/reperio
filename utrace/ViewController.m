@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "MoreInfoView.h"
 
 @interface ViewController ()
 
@@ -20,7 +21,7 @@
     [mapView setDelegate:self];
     
     CLLocationCoordinate2D location = CLLocationCoordinate2DMake(53, 10);
-    [self addMarkerToMapAtLocation:location title:@"Test" subtitle:@"subtitle"];
+    [self addMarkerToMapAtLocation:location title:@"Title" subtitle:@"subtitle"];
     [self moveMapToLocation:location];
 }
 
@@ -48,6 +49,24 @@
     [point setSubtitle:subtitle];
     
     [mapView addAnnotation:point];
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapViewL viewForAnnotation:(id<MKAnnotation>)annotation {
+    MKAnnotationView *pinView = [mapViewL dequeueReusableAnnotationViewWithIdentifier:@"pin"];
+    
+    if(!pinView) {
+        NSLog(@"Pin view is null!");
+        pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"pin"];
+        [pinView setCanShowCallout:YES];
+        [pinView setRightCalloutAccessoryView:[UIButton buttonWithType:UIButtonTypeInfoDark]];
+        
+        MoreInfoView *detailView = [[MoreInfoView alloc] initWithFrame:CGRectZero];
+        
+        [pinView setDetailCalloutAccessoryView:detailView];
+        [detailView setupLabels];
+    }
+    
+    return pinView;
 }
 
 @end
