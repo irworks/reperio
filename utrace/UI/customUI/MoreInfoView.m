@@ -25,7 +25,7 @@
         [self setTranslatesAutoresizingMaskIntoConstraints:NO];
         [self setupConstraints];
         
-        //[self setupLabels];
+        [self setupLabels];
         [self setBackgroundColor:[UIColor lightGrayColor]];
     }
     

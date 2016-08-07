@@ -60,15 +60,11 @@
     MKAnnotationView *pinView = [mapViewL dequeueReusableAnnotationViewWithIdentifier:@"pin"];
     
     if(!pinView) {
-        NSLog(@"Pin view is null!");
         pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"pin"];
         [pinView setCanShowCallout:YES];
         [pinView setRightCalloutAccessoryView:[UIButton buttonWithType:UIButtonTypeInfoDark]];
         
-        MoreInfoView *detailView = [[MoreInfoView alloc] initWithFrame:CGRectZero];
-        
-        [pinView setDetailCalloutAccessoryView:detailView];
-        [detailView setupLabels];
+        [pinView setDetailCalloutAccessoryView:[[MoreInfoView alloc] initWithFrame:CGRectZero]];
     }
     
     return pinView;

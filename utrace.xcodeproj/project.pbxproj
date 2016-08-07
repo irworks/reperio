@@ -17,6 +17,8 @@
 		F4A4A4481D57478900A43A15 /* utraceUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A4A4471D57478900A43A15 /* utraceUITests.m */; };
 		F4A4A4561D574CA100A43A15 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A4A4551D574CA100A43A15 /* MapKit.framework */; };
 		F4A4A4591D57DBD400A43A15 /* MoreInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A4A4581D57DBD400A43A15 /* MoreInfoView.m */; };
+		F4A4A45E1D57E69300A43A15 /* EMKPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A4A45D1D57E69300A43A15 /* EMKPointAnnotation.m */; };
+		F4A4A4611D57E6C200A43A15 /* ResultElement.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A4A4601D57E6C200A43A15 /* ResultElement.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,10 @@
 		F4A4A4571D57DBD400A43A15 /* MoreInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MoreInfoView.h; path = UI/customUI/MoreInfoView.h; sourceTree = "<group>"; };
 		F4A4A4581D57DBD400A43A15 /* MoreInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MoreInfoView.m; path = UI/customUI/MoreInfoView.m; sourceTree = "<group>"; };
 		F4A4A45B1D57E2C100A43A15 /* const.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = const.h; path = UI/const.h; sourceTree = "<group>"; };
+		F4A4A45C1D57E69300A43A15 /* EMKPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EMKPointAnnotation.h; path = customObjects/EMKPointAnnotation.h; sourceTree = "<group>"; };
+		F4A4A45D1D57E69300A43A15 /* EMKPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EMKPointAnnotation.m; path = customObjects/EMKPointAnnotation.m; sourceTree = "<group>"; };
+		F4A4A45F1D57E6C200A43A15 /* ResultElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResultElement.h; path = customObjects/ResultElement.h; sourceTree = "<group>"; };
+		F4A4A4601D57E6C200A43A15 /* ResultElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResultElement.m; path = customObjects/ResultElement.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				F4A4A45B1D57E2C100A43A15 /* const.h */,
+				F4A4A4621D57E6CE00A43A15 /* customObjects */,
 				F4A4A45A1D57DBD800A43A15 /* UI */,
 				F4A4A4251D57478900A43A15 /* AppDelegate.h */,
 				F4A4A4261D57478900A43A15 /* AppDelegate.m */,
@@ -157,6 +164,17 @@
 				F4A4A4581D57DBD400A43A15 /* MoreInfoView.m */,
 			);
 			name = UI;
+			sourceTree = "<group>";
+		};
+		F4A4A4621D57E6CE00A43A15 /* customObjects */ = {
+			isa = PBXGroup;
+			children = (
+				F4A4A45C1D57E69300A43A15 /* EMKPointAnnotation.h */,
+				F4A4A45D1D57E69300A43A15 /* EMKPointAnnotation.m */,
+				F4A4A45F1D57E6C200A43A15 /* ResultElement.h */,
+				F4A4A4601D57E6C200A43A15 /* ResultElement.m */,
+			);
+			name = customObjects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,9 +308,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4A4A42A1D57478900A43A15 /* ViewController.m in Sources */,
+				F4A4A45E1D57E69300A43A15 /* EMKPointAnnotation.m in Sources */,
 				F4A4A4271D57478900A43A15 /* AppDelegate.m in Sources */,
 				F4A4A4241D57478900A43A15 /* main.m in Sources */,
 				F4A4A4591D57DBD400A43A15 /* MoreInfoView.m in Sources */,
+				F4A4A4611D57E6C200A43A15 /* ResultElement.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
