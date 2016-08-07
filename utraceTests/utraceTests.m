@@ -28,16 +28,13 @@
     [super tearDown];
 }
 
-- (void)testMapAnnotation {
+- (void)testMapPostition {
     [viewController moveMapToLocation:CLLocationCoordinate2DMake(53, 10)];
     [viewController moveMapToLocation:CLLocationCoordinate2DMake(1337, 42)];
 }
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+- (void)testMapAnnotation {
+    [viewController addMarkerToMapAtLocation:CLLocationCoordinate2DMake(53, 10) title:@"Test" subtitle:@"subtitle"];
 }
 
 @end

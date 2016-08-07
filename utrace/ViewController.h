@@ -14,8 +14,9 @@
     __weak IBOutlet MKMapView *mapView;
 }
 
-- (IBAction)searchBtnClicked:(id)sender;
+- (IBAction)searchBtnClicked:(id _Nonnull)sender;
 - (void)moveMapToLocation:(CLLocationCoordinate2D)location;
+- (void)addMarkerToMapAtLocation:(CLLocationCoordinate2D)location title:(NSString * _Nonnull)title subtitle:(NSString * _Nonnull)subtitle;
 
 @end
 
