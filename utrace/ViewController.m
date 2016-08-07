@@ -41,6 +41,8 @@
 }
 
 - (IBAction)searchBtnClicked:(id)sender {
+    HTTPRequest *request = [[HTTPRequest alloc] initWithURL:REST_BASE_URL withMethod:@"POST" withParameters:@{@"query" : [searchField text]}];
+    [request startRequest];
 }
 
 - (void)moveMapToLocation:(CLLocationCoordinate2D)location {
@@ -73,7 +75,6 @@
         EMKPointAnnotation *extendedAnnotation = nil;
         
         if([pinView.annotation isKindOfClass:[EMKPointAnnotation class]]) {
-            NSLog(@"Extended!");
             extendedAnnotation = (EMKPointAnnotation *)pinView.annotation;
             [extendedAnnotation setTitle:[[extendedAnnotation resultElement] hostname]];
         }

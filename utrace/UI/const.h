@@ -7,3 +7,5 @@
 //
 
 #define UI_MARGIN 10
+
+#define REST_BASE_URL @"https://api.irwks.cloud/ip/"

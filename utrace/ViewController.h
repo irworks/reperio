@@ -12,6 +12,7 @@
 #import "EMKPointAnnotation.h"
 
 #import "const.h"
+#import "HTTPRequest.h"
 
 @interface ViewController : UIViewController<MKMapViewDelegate> {
     __weak IBOutlet UITextField *searchField;
