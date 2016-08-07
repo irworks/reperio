@@ -39,6 +39,9 @@
                                 <state key="normal" title="Search">
                                     <color key="titleColor" red="1" green="0.29803921570000003" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="searchBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LvQ-O4-DVy"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a domain or IP-Address to lookup" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUt-TX-Hfs">
                                 <rect key="frame" x="20" y="106" width="560" height="18"/>
@@ -90,6 +93,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="reperio" id="a4Q-D1-g7X"/>
+                    <connections>
+                        <outlet property="mapView" destination="rIy-1K-RGV" id="SGy-Ay-tZf"/>
+                        <outlet property="searchField" destination="xhO-Cu-SLp" id="y9v-01-cKe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

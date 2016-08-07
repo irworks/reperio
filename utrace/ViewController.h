@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<MKMapViewDelegate> {
+    __weak IBOutlet UITextField *searchField;
+    __weak IBOutlet MKMapView *mapView;
+}
 
+- (IBAction)searchBtnClicked:(id)sender;
 
 @end
 
