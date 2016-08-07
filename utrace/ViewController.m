@@ -26,7 +26,12 @@
     [mapView setDelegate:self];
     
     CLLocationCoordinate2D location = CLLocationCoordinate2DMake(53, 10);
-    [self addMarkerToMapAtLocation:location title:@"Title" subtitle:@"subtitle"];
+    
+    ResultElement *resultElement = [[ResultElement alloc] init];
+    [resultElement setHostname:@"test.com"];
+    [resultElement setIpAddress:@"1.2.3.4"];
+    
+    [self addMarkerToMapAtLocation:location title:@"Title" subtitle:@"subtitle" element:resultElement];
     [self moveMapToLocation:location];
 }
 
@@ -46,9 +51,10 @@
     }
 }
 
-- (void)addMarkerToMapAtLocation:(CLLocationCoordinate2D)location title:(NSString *)title subtitle:(NSString *)subtitle {
-    MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+- (void)addMarkerToMapAtLocation:(CLLocationCoordinate2D)location title:(NSString *)title subtitle:(NSString *)subtitle element:(ResultElement *)element {
+    EMKPointAnnotation *point = [[EMKPointAnnotation alloc] init];
     
+    [point setResultElement:element];
     [point setCoordinate:location];
     [point setTitle:title];
     [point setSubtitle:subtitle];
@@ -64,7 +70,15 @@
         [pinView setCanShowCallout:YES];
         [pinView setRightCalloutAccessoryView:[UIButton buttonWithType:UIButtonTypeInfoDark]];
         
-        [pinView setDetailCalloutAccessoryView:[[MoreInfoView alloc] initWithFrame:CGRectZero]];
+        EMKPointAnnotation *extendedAnnotation = nil;
+        
+        if([pinView.annotation isKindOfClass:[EMKPointAnnotation class]]) {
+            NSLog(@"Extended!");
+            extendedAnnotation = (EMKPointAnnotation *)pinView.annotation;
+            [extendedAnnotation setTitle:[[extendedAnnotation resultElement] hostname]];
+        }
+        
+        [pinView setDetailCalloutAccessoryView:[[MoreInfoView alloc] initWithResultElement:[extendedAnnotation resultElement]]];
     }
     
     return pinView;

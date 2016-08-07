@@ -34,7 +34,7 @@
 }
 
 - (void)testMapAnnotation {
-    [viewController addMarkerToMapAtLocation:CLLocationCoordinate2DMake(53, 10) title:@"Test" subtitle:@"subtitle"];
+    [viewController addMarkerToMapAtLocation:CLLocationCoordinate2DMake(53, 10) title:@"Test" subtitle:@"subtitle" element:nil];
 }
 
 @end

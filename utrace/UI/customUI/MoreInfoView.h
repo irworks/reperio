@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "const.h"
+#import "ResultElement.h"
 
-@interface MoreInfoView : UIView
+@interface MoreInfoView : UIView {
+    ResultElement *resultElement;
+}
+
+- (id)initWithResultElement:(ResultElement *)result;
 
 - (void)setupLabels;
 

@@ -10,13 +10,11 @@
 
 @implementation MoreInfoView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (id)initWithResultElement:(ResultElement *)result {
+    resultElement = result;
+    
+    return [self initWithFrame:CGRectZero];
 }
-*/
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -53,7 +51,7 @@
 - (void)setupLabels {
     UILabel *addressLbl = [[UILabel alloc] init];
     [addressLbl setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [addressLbl setText:@"IP address:"];
+    [addressLbl setText:[NSString stringWithFormat:@"IP address: %@", [resultElement ipAddress]]];
     [self addSubview:addressLbl];
 
     [self addContstraintsForLabel:addressLbl relativeMarginTo:self];
