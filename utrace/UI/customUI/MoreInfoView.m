@@ -35,12 +35,14 @@
 - (void)setupConstraints {
     
     NSLayoutConstraint *width = [NSLayoutConstraint constraintWithItem:self
-                                                             attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil
+                                                             attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual
+                                                                toItem:nil
                                                              attribute:NSLayoutAttributeNotAnAttribute multiplier:1
                                                               constant:180];
     
     NSLayoutConstraint *height = [NSLayoutConstraint constraintWithItem:self
-                                                              attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil
+                                                              attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual
+                                                                 toItem:nil
                                                               attribute:NSLayoutAttributeNotAnAttribute multiplier:1
                                                                constant:80];
     
@@ -49,23 +51,37 @@
 }
 
 - (void)setupLabels {
-    UILabel *ipTitle = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 100, 20)];
-    //[ipTitle setTranslatesAutoresizingMaskIntoConstraints:NO];
+    UILabel *ipTitle = [[UILabel alloc] init];
+    [ipTitle setTranslatesAutoresizingMaskIntoConstraints:NO];
     [ipTitle setText:@"IP address:"];
     [self addSubview:ipTitle];
     
-    NSLayoutConstraint *marginL = [NSLayoutConstraint constraintWithItem:ipTitle
-                                                               attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self
+    //width
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:ipTitle
+                                                               attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual
+                                                                  toItem:self
                                                                attribute:NSLayoutAttributeWidth multiplier:0.8
-                                                                constant:0.0];
-    
-    NSLayoutConstraint *heightIP = [NSLayoutConstraint constraintWithItem:ipTitle
-                                                                attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self
+                                                                constant:0.0]];
+    //height
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:ipTitle
+                                                                attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual
+                                                                   toItem:self
                                                                 attribute:NSLayoutAttributeHeight multiplier:0.2
-                                                                 constant:0.0];
+                                                                 constant:0.0]];
     
-    //[self addConstraint:marginL];
-    //[self addConstraint:heightIP];
+    //top margin
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:ipTitle
+                                                             attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual
+                                                                toItem:self
+                                                             attribute:NSLayoutAttributeTop multiplier:1.0
+                                                              constant:10.0]];
+    //left margin
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:ipTitle
+                                                           attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual
+                                                              toItem:self
+                                                           attribute:NSLayoutAttributeLeft multiplier:1.0
+                                                            constant:10.0]];
+
 }
 
 @end
