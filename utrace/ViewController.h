@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "const.h"
 
 @interface ViewController : UIViewController<MKMapViewDelegate> {
     __weak IBOutlet UITextField *searchField;

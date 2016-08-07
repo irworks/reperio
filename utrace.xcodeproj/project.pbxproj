@@ -56,6 +56,7 @@
 		F4A4A4551D574CA100A43A15 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		F4A4A4571D57DBD400A43A15 /* MoreInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MoreInfoView.h; path = UI/customUI/MoreInfoView.h; sourceTree = "<group>"; };
 		F4A4A4581D57DBD400A43A15 /* MoreInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MoreInfoView.m; path = UI/customUI/MoreInfoView.m; sourceTree = "<group>"; };
+		F4A4A45B1D57E2C100A43A15 /* const.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = const.h; path = UI/const.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,8 +109,9 @@
 		F4A4A4211D57478900A43A15 /* utrace */ = {
 			isa = PBXGroup;
 			children = (
-				F4A4A4251D57478900A43A15 /* AppDelegate.h */,
+				F4A4A45B1D57E2C100A43A15 /* const.h */,
 				F4A4A45A1D57DBD800A43A15 /* UI */,
+				F4A4A4251D57478900A43A15 /* AppDelegate.h */,
 				F4A4A4261D57478900A43A15 /* AppDelegate.m */,
 				F4A4A4281D57478900A43A15 /* ViewController.h */,
 				F4A4A4291D57478900A43A15 /* ViewController.m */,

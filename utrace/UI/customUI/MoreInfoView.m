@@ -51,37 +51,47 @@
 }
 
 - (void)setupLabels {
-    UILabel *ipTitle = [[UILabel alloc] init];
-    [ipTitle setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [ipTitle setText:@"IP address:"];
-    [self addSubview:ipTitle];
+    UILabel *addressLbl = [[UILabel alloc] init];
+    [addressLbl setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [addressLbl setText:@"IP address:"];
+    [self addSubview:addressLbl];
+
+    [self addContstraintsForLabel:addressLbl relativeMarginTo:self];
     
+    UILabel *locationLbl = [[UILabel alloc] init];
+    [locationLbl setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [locationLbl setText:@"Location:"];
+    [self addSubview:locationLbl];
+    
+    [self addContstraintsForLabel:locationLbl relativeMarginTo:addressLbl];
+}
+
+- (void)addContstraintsForLabel:(UILabel *)label relativeMarginTo:(UIView *)relativeItem {
     //width
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:ipTitle
-                                                               attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual
-                                                                  toItem:self
-                                                               attribute:NSLayoutAttributeWidth multiplier:0.8
-                                                                constant:0.0]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:label
+                                                     attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual
+                                                        toItem:self
+                                                     attribute:NSLayoutAttributeWidth multiplier:0.8
+                                                      constant:0.0]];
     //height
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:ipTitle
-                                                                attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual
-                                                                   toItem:self
-                                                                attribute:NSLayoutAttributeHeight multiplier:0.2
-                                                                 constant:0.0]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:label
+                                                     attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual
+                                                        toItem:self
+                                                     attribute:NSLayoutAttributeHeight multiplier:0.2
+                                                      constant:0.0]];
     
     //top margin
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:ipTitle
-                                                             attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual
-                                                                toItem:self
-                                                             attribute:NSLayoutAttributeTop multiplier:1.0
-                                                              constant:10.0]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:label
+                                                     attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual
+                                                        toItem:relativeItem
+                                                     attribute:NSLayoutAttributeTop multiplier:1.8
+                                                      constant:UI_MARGIN]];
     //left margin
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:ipTitle
-                                                           attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual
-                                                              toItem:self
-                                                           attribute:NSLayoutAttributeLeft multiplier:1.0
-                                                            constant:10.0]];
-
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:label
+                                                     attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual
+                                                        toItem:self
+                                                     attribute:NSLayoutAttributeLeft multiplier:1.0
+                                                      constant:UI_MARGIN]];
 }
 
 @end
