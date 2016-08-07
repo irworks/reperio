@@ -18,6 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    [searchField addTarget:self
+                    action:@selector(textFieldFinished:)
+        forControlEvents:UIControlEventEditingDidEndOnExit];
+    
     [mapView setDelegate:self];
     
     CLLocationCoordinate2D location = CLLocationCoordinate2DMake(53, 10);
@@ -67,6 +72,10 @@
     }
     
     return pinView;
+}
+
+- (IBAction)textFieldFinished:(id)sender {
+    [sender resignFirstResponder];
 }
 
 @end
