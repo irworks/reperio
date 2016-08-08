@@ -23,6 +23,7 @@
 		F4A4A4611D57E6C200A43A15 /* ResultElement.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A4A4601D57E6C200A43A15 /* ResultElement.m */; };
 		F4A4A4661D57ECFD00A43A15 /* HTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A4A4641D57ECFD00A43A15 /* HTTPRequest.m */; };
 		F4A4A4691D587C3C00A43A15 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A4A4681D587C3C00A43A15 /* BaseViewController.m */; };
+		F4A4A46F1D587FAE00A43A15 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A4A46E1D587FAE00A43A15 /* BaseModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,11 +74,13 @@
 		F4A4A45D1D57E69300A43A15 /* EMKPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EMKPointAnnotation.m; path = customObjects/EMKPointAnnotation.m; sourceTree = "<group>"; };
 		F4A4A45F1D57E6C200A43A15 /* ResultElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResultElement.h; path = customObjects/ResultElement.h; sourceTree = "<group>"; };
 		F4A4A4601D57E6C200A43A15 /* ResultElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResultElement.m; path = customObjects/ResultElement.m; sourceTree = "<group>"; };
-		F4A4A4631D57ECFD00A43A15 /* HTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPRequest.h; sourceTree = "<group>"; };
-		F4A4A4641D57ECFD00A43A15 /* HTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPRequest.m; sourceTree = "<group>"; };
-		F4A4A4651D57ECFD00A43A15 /* HTTPRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPRequestDelegate.h; sourceTree = "<group>"; };
+		F4A4A4631D57ECFD00A43A15 /* HTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTTPRequest.h; path = API/HTTPRequest.h; sourceTree = "<group>"; };
+		F4A4A4641D57ECFD00A43A15 /* HTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTTPRequest.m; path = API/HTTPRequest.m; sourceTree = "<group>"; };
+		F4A4A4651D57ECFD00A43A15 /* HTTPRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTTPRequestDelegate.h; path = API/HTTPRequestDelegate.h; sourceTree = "<group>"; };
 		F4A4A4671D587C3C00A43A15 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseViewController.h; path = UI/BaseViewController.h; sourceTree = "<group>"; };
 		F4A4A4681D587C3C00A43A15 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseViewController.m; path = UI/BaseViewController.m; sourceTree = "<group>"; };
+		F4A4A46D1D587FAE00A43A15 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseModel.h; path = API/Models/BaseModel.h; sourceTree = "<group>"; };
+		F4A4A46E1D587FAE00A43A15 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseModel.m; path = API/Models/BaseModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,8 +244,18 @@
 				F4A4A4631D57ECFD00A43A15 /* HTTPRequest.h */,
 				F4A4A4641D57ECFD00A43A15 /* HTTPRequest.m */,
 				F4A4A4651D57ECFD00A43A15 /* HTTPRequestDelegate.h */,
+				F4A4A4701D587FB200A43A15 /* Models */,
 			);
 			name = API;
+			sourceTree = "<group>";
+		};
+		F4A4A4701D587FB200A43A15 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F4A4A46D1D587FAE00A43A15 /* BaseModel.h */,
+				F4A4A46E1D587FAE00A43A15 /* BaseModel.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -474,6 +487,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4A4A46F1D587FAE00A43A15 /* BaseModel.m in Sources */,
 				F4A4A42A1D57478900A43A15 /* ViewController.m in Sources */,
 				F4A4A4691D587C3C00A43A15 /* BaseViewController.m in Sources */,
 				F4A4A45E1D57E69300A43A15 /* EMKPointAnnotation.m in Sources */,
