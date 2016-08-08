@@ -20,6 +20,10 @@
     [sender resignFirstResponder];
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
 /* API delegate */
 - (void)onRequestPrepared {}
 - (void)onRequestStarted {}
