@@ -43,13 +43,12 @@
     }
 }
 
-- (void)addMarkerToMapAtLocation:(CLLocationCoordinate2D)location title:(NSString *)title subtitle:(NSString *)subtitle element:(LookupModel *)element {
+- (void)addMarkerToMapAtLocation:(CLLocationCoordinate2D)location element:(LookupModel *)element {
     EMKPointAnnotation *point = [[EMKPointAnnotation alloc] init];
     
     [point setLookupModel:element];
     [point setCoordinate:location];
-    [point setTitle:title];
-    [point setSubtitle:subtitle];
+    [point setTitle:[element hostname]];
     
     [mapView addAnnotation:point];
 }
@@ -79,7 +78,7 @@
     
     LookupModel *lookupModel = [[LookupModel alloc] initWithString:responseSting error:nil];
     
-    [self addMarkerToMapAtLocation:[lookupModel loc] title:@"Title" subtitle:@"subtitle" element:lookupModel];
+    [self addMarkerToMapAtLocation:[lookupModel loc] element:lookupModel];
     [self moveMapToLocation:[lookupModel loc]];
 }
 
