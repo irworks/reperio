@@ -1,0 +1,3 @@
+*.lock
+Pods/
+utrace.xcodeproj/xcuserdata/irworks.xcuserdatad/xcdebugger/
