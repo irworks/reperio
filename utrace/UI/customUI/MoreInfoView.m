@@ -49,27 +49,56 @@
 }
 
 - (void)setupLabels {
+    //ip
     UILabel *addressLbl = [[UILabel alloc] init];
-    [addressLbl setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [addressLbl setText:[NSString stringWithFormat:@"IP address: %@", [lookupModel ip]]];
+    [addressLbl setText:@"IP address:"];
     [self addSubview:addressLbl];
 
     [self addContstraintsForLabel:addressLbl relativeMarginTo:self];
     
+    UILabel *addressLblValue = [[UILabel alloc] init];
+    [addressLblValue setText:[lookupModel ip]];
+    [self addSubview:addressLblValue];
+    
+    [self addContstraintsForLabel:addressLblValue relativeMarginTo:addressLbl];
+    
+    //location
     UILabel *locationLbl = [[UILabel alloc] init];
-    [locationLbl setTranslatesAutoresizingMaskIntoConstraints:NO];
     [locationLbl setText:@"Location:"];
     [self addSubview:locationLbl];
     
-    [self addContstraintsForLabel:locationLbl relativeMarginTo:addressLbl];
+    [self addContstraintsForLabel:locationLbl relativeMarginTo:addressLblValue];
+    
+    NSString *locationString = @"";
+    
+    if(![[lookupModel city] isEqualToString:@""]) {
+        locationString = [[lookupModel city] stringByAppendingString:@", "];
+    }
+    
+    if(![[lookupModel region] isEqualToString:@""]) {
+        locationString = [locationString stringByAppendingString:[[lookupModel region] stringByAppendingString:@", "]];
+    }
+    
+    if(![[lookupModel country] isEqualToString:@""]) {
+        locationString = [locationString stringByAppendingString:[lookupModel country]];
+    }
+    
+    UILabel *locationLblVal = [[UILabel alloc] init];
+    [locationLblVal setText:locationString];
+    [self addSubview:locationLblVal];
+    
+    [self addContstraintsForLabel:locationLblVal relativeMarginTo:locationLbl];
 }
 
 - (void)addContstraintsForLabel:(UILabel *)label relativeMarginTo:(UIView *)relativeItem {
+    [label setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [label setTextAlignment:NSTextAlignmentCenter];
+    
     //width
     [self addConstraint:[NSLayoutConstraint constraintWithItem:label
                                                      attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual
                                                         toItem:self
-                                                     attribute:NSLayoutAttributeWidth multiplier:0.9
+                                                     attribute:NSLayoutAttributeWidth multiplier:0.8
                                                       constant:0.0]];
     //height
     [self addConstraint:[NSLayoutConstraint constraintWithItem:label
@@ -82,14 +111,15 @@
     [self addConstraint:[NSLayoutConstraint constraintWithItem:label
                                                      attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual
                                                         toItem:relativeItem
-                                                     attribute:NSLayoutAttributeTop multiplier:1.8
+                                                     attribute:NSLayoutAttributeTop multiplier:1.5
                                                       constant:UI_MARGIN]];
     //left margin
     [self addConstraint:[NSLayoutConstraint constraintWithItem:label
-                                                     attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual
+                                                     attribute:NSLayoutAttributeLeftMargin relatedBy:NSLayoutRelationEqual
                                                         toItem:self
-                                                     attribute:NSLayoutAttributeLeft multiplier:1.0
+                                                     attribute:NSLayoutAttributeLeftMargin multiplier:1.0
                                                       constant:UI_MARGIN]];
+    
 }
 
 @end
