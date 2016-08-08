@@ -37,7 +37,7 @@
 
 - (void)moveMapToLocation:(CLLocationCoordinate2D)location {
     @try {
-        [mapView setRegion:MKCoordinateRegionMake(location, MKCoordinateSpanMake(0.2, 0.2)) animated:YES];
+        [mapView setRegion:MKCoordinateRegionMake(CLLocationCoordinate2DMake(location.latitude + 0.02, location.longitude), MKCoordinateSpanMake(0.2, 0.2)) animated:YES];
     } @catch (NSException *exception) {
         NSLog(@"Invalid region: lat: %f; long: %f", location.latitude, location.longitude);
     }
@@ -51,6 +51,7 @@
     [point setTitle:[element hostname]];
     
     [mapView addAnnotation:point];
+    [mapView selectAnnotation:point animated:YES];
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapViewL viewForAnnotation:(id<MKAnnotation>)annotation {
