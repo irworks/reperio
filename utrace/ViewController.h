@@ -8,13 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+
+#import "BaseViewController.h"
 #import "ResultElement.h"
 #import "EMKPointAnnotation.h"
 
-#import "const.h"
-#import "HTTPRequest.h"
-
-@interface ViewController : UIViewController<MKMapViewDelegate> {
+@interface ViewController : BaseViewController<MKMapViewDelegate> {
     __weak IBOutlet UITextField *searchField;
     __weak IBOutlet MKMapView *mapView;
 }

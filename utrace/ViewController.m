@@ -18,21 +18,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
-    [searchField addTarget:self
-                    action:@selector(textFieldFinished:)
-        forControlEvents:UIControlEventEditingDidEndOnExit];
+    [self addListenerToTextfield:searchField];
     
     [mapView setDelegate:self];
-    
-    CLLocationCoordinate2D location = CLLocationCoordinate2DMake(53, 10);
-    
-    ResultElement *resultElement = [[ResultElement alloc] init];
-    [resultElement setHostname:@"test.com"];
-    [resultElement setIpAddress:@"1.2.3.4"];
-    
-    [self addMarkerToMapAtLocation:location title:@"Title" subtitle:@"subtitle" element:resultElement];
-    [self moveMapToLocation:location];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,6 +30,8 @@
 
 - (IBAction)searchBtnClicked:(id)sender {
     HTTPRequest *request = [[HTTPRequest alloc] initWithURL:REST_BASE_URL withMethod:@"POST" withParameters:@{@"query" : [searchField text]}];
+    [request setDelegate:self];
+    [request setDebug:YES];
     [request startRequest];
 }
 
@@ -85,18 +75,19 @@
     return pinView;
 }
 
-- (IBAction)textFieldFinished:(id)sender {
-    [sender resignFirstResponder];
-}
-
-- (void)onRequestPrepared {}
-- (void)onRequestStarted {}
-- (void)onRequestPaused {}
-- (void)onRequestResumed {}
-- (void)onRequestCanceled {}
-
 - (void)onRequestSuccess:(NSString *)responseSting withJSON:(NSDictionary *)responseJSON {
     
+    
+    
+    
+    CLLocationCoordinate2D location = CLLocationCoordinate2DMake(53, 10);
+    
+    ResultElement *resultElement = [[ResultElement alloc] init];
+    [resultElement setHostname:@"test.com"];
+    [resultElement setIpAddress:@"1.2.3.4"];
+    
+    [self addMarkerToMapAtLocation:location title:@"Title" subtitle:@"subtitle" element:resultElement];
+    [self moveMapToLocation:location];
 }
 
 - (void)onRequestFail:(NSError *)error {
