@@ -24,6 +24,7 @@
 		F4A4A4661D57ECFD00A43A15 /* HTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A4A4641D57ECFD00A43A15 /* HTTPRequest.m */; };
 		F4A4A4691D587C3C00A43A15 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A4A4681D587C3C00A43A15 /* BaseViewController.m */; };
 		F4A4A46F1D587FAE00A43A15 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A4A46E1D587FAE00A43A15 /* BaseModel.m */; };
+		F4A4A4731D587FF100A43A15 /* LookupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A4A4721D587FF100A43A15 /* LookupModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,8 @@
 		F4A4A4681D587C3C00A43A15 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseViewController.m; path = UI/BaseViewController.m; sourceTree = "<group>"; };
 		F4A4A46D1D587FAE00A43A15 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseModel.h; path = API/Models/BaseModel.h; sourceTree = "<group>"; };
 		F4A4A46E1D587FAE00A43A15 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseModel.m; path = API/Models/BaseModel.m; sourceTree = "<group>"; };
+		F4A4A4711D587FF100A43A15 /* LookupModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LookupModel.h; path = API/Models/LookupModel.h; sourceTree = "<group>"; };
+		F4A4A4721D587FF100A43A15 /* LookupModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LookupModel.m; path = API/Models/LookupModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +257,8 @@
 			children = (
 				F4A4A46D1D587FAE00A43A15 /* BaseModel.h */,
 				F4A4A46E1D587FAE00A43A15 /* BaseModel.m */,
+				F4A4A4711D587FF100A43A15 /* LookupModel.h */,
+				F4A4A4721D587FF100A43A15 /* LookupModel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -492,6 +497,7 @@
 				F4A4A4691D587C3C00A43A15 /* BaseViewController.m in Sources */,
 				F4A4A45E1D57E69300A43A15 /* EMKPointAnnotation.m in Sources */,
 				F4A4A4271D57478900A43A15 /* AppDelegate.m in Sources */,
+				F4A4A4731D587FF100A43A15 /* LookupModel.m in Sources */,
 				F4A4A4241D57478900A43A15 /* main.m in Sources */,
 				F4A4A4591D57DBD400A43A15 /* MoreInfoView.m in Sources */,
 				F4A4A4661D57ECFD00A43A15 /* HTTPRequest.m in Sources */,
