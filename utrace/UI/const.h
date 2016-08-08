@@ -6,6 +6,13 @@
 //  Copyright © 2016 IR Works. All rights reserved.
 //
 
-#define UI_MARGIN 10
+/* general */
+#define APP_NAME @"reperio"
 
+/* UI */
+#define UI_MARGIN 10
+#define PIN_IDENTIFIER @"pin"
+#define MAP_OFFSET_ON_PIN 0.02
+
+/* API */
 #define REST_BASE_URL @"https://api.irwks.cloud/ip/"

@@ -37,7 +37,7 @@
 
 - (void)moveMapToLocation:(CLLocationCoordinate2D)location {
     @try {
-        [mapView setRegion:MKCoordinateRegionMake(CLLocationCoordinate2DMake(location.latitude + 0.02, location.longitude), MKCoordinateSpanMake(0.2, 0.2)) animated:YES];
+        [mapView setRegion:MKCoordinateRegionMake(CLLocationCoordinate2DMake(location.latitude + MAP_OFFSET_ON_PIN, location.longitude), MKCoordinateSpanMake(0.2, 0.2)) animated:YES];
     } @catch (NSException *exception) {
         NSLog(@"Invalid region: lat: %f; long: %f", location.latitude, location.longitude);
     }
@@ -55,10 +55,10 @@
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapViewL viewForAnnotation:(id<MKAnnotation>)annotation {
-    MKAnnotationView *pinView = [mapViewL dequeueReusableAnnotationViewWithIdentifier:@"pin"];
+    MKAnnotationView *pinView = [mapViewL dequeueReusableAnnotationViewWithIdentifier:PIN_IDENTIFIER];
     
     if(!pinView) {
-        pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"pin"];
+        pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:PIN_IDENTIFIER];
         [pinView setCanShowCallout:YES];
         [pinView setRightCalloutAccessoryView:[UIButton buttonWithType:UIButtonTypeInfoDark]];
         
@@ -83,7 +83,7 @@
 }
 
 - (void)onRequestFail:(NSError *)error {
-    
+    [self showAlertMessageWithTitle:APP_NAME message:[error localizedDescription]];
 }
 
 @end
