@@ -61,6 +61,8 @@
         pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:PIN_IDENTIFIER];
         [pinView setCanShowCallout:YES];
         [pinView setRightCalloutAccessoryView:[UIButton buttonWithType:UIButtonTypeInfoDark]];
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(annotationInfoButtonClicked:)];
+        [[pinView rightCalloutAccessoryView] addGestureRecognizer:tapGesture];
         
         EMKPointAnnotation *extendedAnnotation = nil;
         
@@ -73,6 +75,11 @@
     }
     
     return pinView;
+}
+
+- (void)annotationInfoButtonClicked:(id)sender {
+    [self showAlertMessageWithTitle:APP_NAME message:@"not yet implemented"];
+    //[[UIPasteboard generalPasteboard] copy:<#(nullable id)#>]
 }
 
 - (void)onRequestSuccess:(NSString *)responseSting withJSON:(NSDictionary *)responseJSON {
