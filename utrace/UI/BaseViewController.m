@@ -20,8 +20,42 @@
     [sender resignFirstResponder];
 }
 
+/* UI */
+
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
+}
+
+- (UIAlertController *)showAlertMessageWithTitle:(NSString *)title message:(NSString *)message {
+    return [self showAlertMessageWithTitle:title message:message completion:nil actions:nil style:UIAlertControllerStyleAlert];
+}
+
+- (UIAlertController *)showAlertMessageWithTitle:(NSString *)title message:(NSString *)message completion:(void (^)(void))completion actions:(NSArray <UIAlertAction*> *)actions {
+    return [self showAlertMessageWithTitle:title message:message completion:completion actions:actions style:UIAlertControllerStyleAlert];
+}
+
+- (UIAlertController *)showAlertMessageWithTitle:(NSString *)title message:(NSString *)message completion:(void (^)(void))completion actions:(NSArray <UIAlertAction*> *)actions style:(UIAlertControllerStyle)style {
+    UIAlertController *alertController = [UIAlertController
+                                          alertControllerWithTitle:title
+                                          message:message
+                                          preferredStyle:style];
+    
+    if(actions == nil) {
+        UIAlertAction *okAction = [UIAlertAction
+                                   actionWithTitle:NSLocalizedString(@"OK", nil)
+                                   style:UIAlertActionStyleDefault
+                                   handler:nil];
+        
+        [alertController addAction:okAction];
+    }else{
+        for(UIAlertAction *action in actions) {
+            [alertController addAction:action];
+        }
+    }
+    
+    [self presentViewController:alertController animated:YES completion:completion];
+    
+    return alertController;
 }
 
 /* API delegate */

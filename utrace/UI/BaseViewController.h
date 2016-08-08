@@ -12,6 +12,8 @@
 
 @interface BaseViewController : UIViewController<HTTPRequestDelegate>
 
-- (void)addListenerToTextfield:(UITextField *)textField;
+- (void)addListenerToTextfield:(UITextField * _Nonnull)textField;
+- (UIAlertController * _Nonnull)showAlertMessageWithTitle:(NSString * _Nonnull)title message:(NSString * _Nonnull)message;
+- (UIAlertController * _Nonnull)showAlertMessageWithTitle:(NSString * _Nonnull)title message:(NSString * _Nonnull)message completion:(void (^ _Nullable)(void))completion actions:(NSArray <UIAlertAction*> * _Nullable)actions;
 
 @end
