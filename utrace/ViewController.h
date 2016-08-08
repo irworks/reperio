@@ -10,7 +10,6 @@
 #import <MapKit/MapKit.h>
 
 #import "BaseViewController.h"
-#import "ResultElement.h"
 #import "LookupModel.h"
 #import "EMKPointAnnotation.h"
 

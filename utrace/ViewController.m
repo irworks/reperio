@@ -79,10 +79,8 @@
     
     LookupModel *lookupModel = [[LookupModel alloc] initWithString:responseSting error:nil];
     
-    CLLocationCoordinate2D location = CLLocationCoordinate2DMake(53, 10);
-    
-    [self addMarkerToMapAtLocation:location title:@"Title" subtitle:@"subtitle" element:lookupModel];
-    [self moveMapToLocation:location];
+    [self addMarkerToMapAtLocation:[lookupModel loc] title:@"Title" subtitle:@"subtitle" element:lookupModel];
+    [self moveMapToLocation:[lookupModel loc]];
 }
 
 - (void)onRequestFail:(NSError *)error {
