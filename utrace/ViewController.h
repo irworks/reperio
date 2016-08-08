@@ -11,6 +11,7 @@
 
 #import "BaseViewController.h"
 #import "ResultElement.h"
+#import "LookupModel.h"
 #import "EMKPointAnnotation.h"
 
 @interface ViewController : BaseViewController<MKMapViewDelegate> {

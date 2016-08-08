@@ -10,8 +10,8 @@
 
 @implementation MoreInfoView
 
-- (id)initWithResultElement:(ResultElement *)result {
-    resultElement = result;
+- (id)initWithLookupModel:(LookupModel *)model {
+    lookupModel = model;
     
     return [self initWithFrame:CGRectZero];
 }
@@ -51,7 +51,7 @@
 - (void)setupLabels {
     UILabel *addressLbl = [[UILabel alloc] init];
     [addressLbl setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [addressLbl setText:[NSString stringWithFormat:@"IP address: %@", [resultElement ipAddress]]];
+    [addressLbl setText:[NSString stringWithFormat:@"IP address: %@", [lookupModel ip]]];
     [self addSubview:addressLbl];
 
     [self addContstraintsForLabel:addressLbl relativeMarginTo:self];

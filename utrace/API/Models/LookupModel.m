@@ -11,7 +11,11 @@
 @implementation LookupModel
 
 - (void)setLocWithNSString:(NSString *)loc {
-    NSLog(@"%@", loc);
+    NSArray *itemArray = [loc componentsSeparatedByString:@","];
+    
+    if([itemArray count] == 2) {
+        _loc = CLLocationCoordinate2DMake([[itemArray firstObject] doubleValue], [[itemArray lastObject] doubleValue]);
+    }
 }
 
 @end

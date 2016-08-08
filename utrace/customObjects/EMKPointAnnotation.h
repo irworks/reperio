@@ -7,10 +7,10 @@
 //
 
 #import <MapKit/MapKit.h>
-#import "ResultElement.h"
+#import "LookupModel.h"
 
 @interface EMKPointAnnotation : MKPointAnnotation
 
-@property (nullable) ResultElement *resultElement;
+@property (nullable) LookupModel *lookupModel;
 
 @end

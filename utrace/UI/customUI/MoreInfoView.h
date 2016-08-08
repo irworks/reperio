@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "const.h"
-#import "ResultElement.h"
+#import "LookupModel.h"
 
 @interface MoreInfoView : UIView {
-    ResultElement *resultElement;
+    LookupModel *lookupModel;
 }
 
-- (id)initWithResultElement:(ResultElement *)result;
+- (id)initWithLookupModel:(LookupModel *)model;
 
 - (void)setupLabels;
 

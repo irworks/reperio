@@ -43,10 +43,10 @@
     }
 }
 
-- (void)addMarkerToMapAtLocation:(CLLocationCoordinate2D)location title:(NSString *)title subtitle:(NSString *)subtitle element:(ResultElement *)element {
+- (void)addMarkerToMapAtLocation:(CLLocationCoordinate2D)location title:(NSString *)title subtitle:(NSString *)subtitle element:(LookupModel *)element {
     EMKPointAnnotation *point = [[EMKPointAnnotation alloc] init];
     
-    [point setResultElement:element];
+    [point setLookupModel:element];
     [point setCoordinate:location];
     [point setTitle:title];
     [point setSubtitle:subtitle];
@@ -66,10 +66,10 @@
         
         if([pinView.annotation isKindOfClass:[EMKPointAnnotation class]]) {
             extendedAnnotation = (EMKPointAnnotation *)pinView.annotation;
-            [extendedAnnotation setTitle:[[extendedAnnotation resultElement] hostname]];
+            [extendedAnnotation setTitle:[[extendedAnnotation lookupModel] hostname]];
         }
         
-        [pinView setDetailCalloutAccessoryView:[[MoreInfoView alloc] initWithResultElement:[extendedAnnotation resultElement]]];
+        [pinView setDetailCalloutAccessoryView:[[MoreInfoView alloc] initWithLookupModel:[extendedAnnotation lookupModel]]];
     }
     
     return pinView;
@@ -77,16 +77,11 @@
 
 - (void)onRequestSuccess:(NSString *)responseSting withJSON:(NSDictionary *)responseJSON {
     
-    
-    
+    LookupModel *lookupModel = [[LookupModel alloc] initWithString:responseSting error:nil];
     
     CLLocationCoordinate2D location = CLLocationCoordinate2DMake(53, 10);
     
-    ResultElement *resultElement = [[ResultElement alloc] init];
-    [resultElement setHostname:@"test.com"];
-    [resultElement setIpAddress:@"1.2.3.4"];
-    
-    [self addMarkerToMapAtLocation:location title:@"Title" subtitle:@"subtitle" element:resultElement];
+    [self addMarkerToMapAtLocation:location title:@"Title" subtitle:@"subtitle" element:lookupModel];
     [self moveMapToLocation:location];
 }
 
