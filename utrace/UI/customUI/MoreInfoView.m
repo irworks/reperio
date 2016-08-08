@@ -36,13 +36,13 @@
                                                              attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual
                                                                 toItem:nil
                                                              attribute:NSLayoutAttributeNotAnAttribute multiplier:1
-                                                              constant:180];
+                                                              constant:200];
     
     NSLayoutConstraint *height = [NSLayoutConstraint constraintWithItem:self
                                                               attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual
                                                                  toItem:nil
                                                               attribute:NSLayoutAttributeNotAnAttribute multiplier:1
-                                                               constant:80];
+                                                               constant:100];
     
     [self addConstraint:width];
     [self addConstraint:height];
@@ -69,7 +69,7 @@
     [self addConstraint:[NSLayoutConstraint constraintWithItem:label
                                                      attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual
                                                         toItem:self
-                                                     attribute:NSLayoutAttributeWidth multiplier:0.8
+                                                     attribute:NSLayoutAttributeWidth multiplier:0.9
                                                       constant:0.0]];
     //height
     [self addConstraint:[NSLayoutConstraint constraintWithItem:label

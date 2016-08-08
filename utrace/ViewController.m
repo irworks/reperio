@@ -75,7 +75,6 @@
 }
 
 - (void)onRequestSuccess:(NSString *)responseSting withJSON:(NSDictionary *)responseJSON {
-    
     LookupModel *lookupModel = [[LookupModel alloc] initWithString:responseSting error:nil];
     
     [self addMarkerToMapAtLocation:[lookupModel loc] element:lookupModel];
