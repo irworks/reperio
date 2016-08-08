@@ -89,4 +89,18 @@
     [sender resignFirstResponder];
 }
 
+- (void)onRequestPrepared {}
+- (void)onRequestStarted {}
+- (void)onRequestPaused {}
+- (void)onRequestResumed {}
+- (void)onRequestCanceled {}
+
+- (void)onRequestSuccess:(NSString *)responseSting withJSON:(NSDictionary *)responseJSON {
+    
+}
+
+- (void)onRequestFail:(NSError *)error {
+    
+}
+
 @end

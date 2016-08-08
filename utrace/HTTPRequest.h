@@ -15,6 +15,7 @@
     
     NSMutableURLRequest *request;
     NSURLSessionDataTask *dataSession;
+    NSMutableData *requestData;
     
     #define REQUEST_DEFAULT_TIMEOUT 60.0
     
