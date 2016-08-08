@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A6061130D4440EDCDBC34A6 /* libPods-utrace.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B2919C00960FE6187D02830 /* libPods-utrace.a */; };
+		EED22EB1CD00562F210FF6BB /* libPods-utraceTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0875C63D8DA98B8A5D8EA592 /* libPods-utraceTests.a */; };
 		F4A4A4241D57478900A43A15 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A4A4231D57478900A43A15 /* main.m */; };
 		F4A4A4271D57478900A43A15 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A4A4261D57478900A43A15 /* AppDelegate.m */; };
 		F4A4A42A1D57478900A43A15 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A4A4291D57478900A43A15 /* ViewController.m */; };
@@ -41,6 +43,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0875C63D8DA98B8A5D8EA592 /* libPods-utraceTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-utraceTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C8000BAE8AA0E39E420927C /* Pods-utraceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-utraceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-utraceTests/Pods-utraceTests.release.xcconfig"; sourceTree = "<group>"; };
+		7A105C40E9E3FB41653F32C9 /* Pods-utraceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-utraceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-utraceTests/Pods-utraceTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8B2919C00960FE6187D02830 /* libPods-utrace.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-utrace.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8D90C642BB1415048A0C498 /* Pods-utrace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-utrace.debug.xcconfig"; path = "Pods/Target Support Files/Pods-utrace/Pods-utrace.debug.xcconfig"; sourceTree = "<group>"; };
+		A96EDC23D922211816FC6FDD /* Pods-utrace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-utrace.release.xcconfig"; path = "Pods/Target Support Files/Pods-utrace/Pods-utrace.release.xcconfig"; sourceTree = "<group>"; };
 		F4A4A41F1D57478900A43A15 /* utrace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = utrace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4A4A4231D57478900A43A15 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F4A4A4251D57478900A43A15 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -78,6 +86,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4A4A4561D574CA100A43A15 /* MapKit.framework in Frameworks */,
+				5A6061130D4440EDCDBC34A6 /* libPods-utrace.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EED22EB1CD00562F210FF6BB /* libPods-utraceTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +108,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9BD3B0683A07B620AC3094DB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8B2919C00960FE6187D02830 /* libPods-utrace.a */,
+				0875C63D8DA98B8A5D8EA592 /* libPods-utraceTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CAE3B0CBF58136BE45AA8388 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A8D90C642BB1415048A0C498 /* Pods-utrace.debug.xcconfig */,
+				A96EDC23D922211816FC6FDD /* Pods-utrace.release.xcconfig */,
+				7A105C40E9E3FB41653F32C9 /* Pods-utraceTests.debug.xcconfig */,
+				6C8000BAE8AA0E39E420927C /* Pods-utraceTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F4A4A4161D57478900A43A15 = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +136,8 @@
 				F4A4A43B1D57478900A43A15 /* utraceTests */,
 				F4A4A4461D57478900A43A15 /* utraceUITests */,
 				F4A4A4201D57478900A43A15 /* Products */,
+				CAE3B0CBF58136BE45AA8388 /* Pods */,
+				9BD3B0683A07B620AC3094DB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -220,9 +252,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F4A4A44C1D57478900A43A15 /* Build configuration list for PBXNativeTarget "utrace" */;
 			buildPhases = (
+				ADB957A2F850BFB31D348299 /* 📦 Check Pods Manifest.lock */,
 				F4A4A41B1D57478900A43A15 /* Sources */,
 				F4A4A41C1D57478900A43A15 /* Frameworks */,
 				F4A4A41D1D57478900A43A15 /* Resources */,
+				437730337A5C2DDFD22B0376 /* 📦 Embed Pods Frameworks */,
+				7376CADD22BE3103BF135B43 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -237,9 +272,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F4A4A44F1D57478900A43A15 /* Build configuration list for PBXNativeTarget "utraceTests" */;
 			buildPhases = (
+				A1D83367FCECB7435178C7DF /* 📦 Check Pods Manifest.lock */,
 				F4A4A4341D57478900A43A15 /* Sources */,
 				F4A4A4351D57478900A43A15 /* Frameworks */,
 				F4A4A4361D57478900A43A15 /* Resources */,
+				674A320DB5B23CEDF37EA27C /* 📦 Embed Pods Frameworks */,
+				820E11E88F186936DF1DD97A /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -337,6 +375,99 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		437730337A5C2DDFD22B0376 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-utrace/Pods-utrace-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		674A320DB5B23CEDF37EA27C /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-utraceTests/Pods-utraceTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7376CADD22BE3103BF135B43 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-utrace/Pods-utrace-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		820E11E88F186936DF1DD97A /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-utraceTests/Pods-utraceTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A1D83367FCECB7435178C7DF /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		ADB957A2F850BFB31D348299 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F4A4A41B1D57478900A43A15 /* Sources */ = {
@@ -491,6 +622,7 @@
 		};
 		F4A4A44D1D57478900A43A15 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8D90C642BB1415048A0C498 /* Pods-utrace.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = utrace/Info.plist;
@@ -502,6 +634,7 @@
 		};
 		F4A4A44E1D57478900A43A15 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A96EDC23D922211816FC6FDD /* Pods-utrace.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = utrace/Info.plist;
@@ -513,6 +646,7 @@
 		};
 		F4A4A4501D57478900A43A15 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A105C40E9E3FB41653F32C9 /* Pods-utraceTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = utraceTests/Info.plist;
@@ -525,6 +659,7 @@
 		};
 		F4A4A4511D57478900A43A15 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C8000BAE8AA0E39E420927C /* Pods-utraceTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = utraceTests/Info.plist;
@@ -576,6 +711,7 @@
 				F4A4A44E1D57478900A43A15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F4A4A44F1D57478900A43A15 /* Build configuration list for PBXNativeTarget "utraceTests" */ = {
 			isa = XCConfigurationList;
@@ -584,6 +720,7 @@
 				F4A4A4511D57478900A43A15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F4A4A4521D57478900A43A15 /* Build configuration list for PBXNativeTarget "utraceUITests" */ = {
 			isa = XCConfigurationList;
@@ -592,6 +729,7 @@
 				F4A4A4541D57478900A43A15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
