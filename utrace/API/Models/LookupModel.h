@@ -19,4 +19,6 @@
 @property (nonatomic) CLLocationCoordinate2D loc;
 @property (strong, nonatomic, nullable) NSString <Optional> *org;
 
+- (NSString * _Nonnull)getLocationString;
+
 @end

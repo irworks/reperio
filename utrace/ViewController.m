@@ -94,8 +94,13 @@
                                              }
                                            ],
                                          
+                                         [UIAlertAction actionWithTitle:[NSString stringWithFormat:@"%@ %@", copyPrefix, NSLocalizedString(@"LOCATION", nil)] style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                                [[UIPasteboard generalPasteboard] setString:[[extendedAnnotation lookupModel] getLocationString]];
+                                             }
+                                           ],
+                                         
                                          [UIAlertAction actionWithTitle:[NSString stringWithFormat:@"%@ %@", copyPrefix, NSLocalizedString(@"ORGANIZATION", nil)] style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                                                [[UIPasteboard generalPasteboard] setString:[[extendedAnnotation lookupModel] orig]];
+                                                [[UIPasteboard generalPasteboard] setString:[[extendedAnnotation lookupModel] org]];
                                              }
                                            ],
                                          

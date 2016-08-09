@@ -65,22 +65,8 @@
     
     [self addMarginContstraintsForLabel:locationLbl relativeMarginTo:addressLblValue topMultiplier:1.1 isFirstLabel:NO];
     
-    NSString *locationString = @"";
-    
-    if(![[lookupModel city] isEqualToString:@""]) {
-        locationString = [[lookupModel city] stringByAppendingString:@", "];
-    }
-    
-    if(![[lookupModel region] isEqualToString:@""]) {
-        locationString = [locationString stringByAppendingString:[[lookupModel region] stringByAppendingString:@", "]];
-    }
-    
-    if(![[lookupModel country] isEqualToString:@""]) {
-        locationString = [locationString stringByAppendingString:[lookupModel country]];
-    }
-    
     CustomLabel *locationLblVal = [[CustomLabel alloc] init];
-    [locationLblVal setText:locationString];
+    [locationLblVal setText:[lookupModel getLocationString]];
     [self addSubview:locationLblVal];
     
     [self addMarginContstraintsForLabel:locationLblVal relativeMarginTo:locationLbl topMultiplier:1.0 isFirstLabel:NO];
