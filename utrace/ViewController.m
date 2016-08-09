@@ -78,28 +78,27 @@
 - (void)mapView:(MKMapView *)mapViewL annotationView:(MKAnnotationView *)pinView calloutAccessoryControlTapped:(UIControl *)control {
     if([pinView.annotation isKindOfClass:[EMKPointAnnotation class]]) {
         EMKPointAnnotation *extendedAnnotation = (EMKPointAnnotation *)pinView.annotation;
-        NSString *copyPrefix = NSLocalizedString(@"COPY", nil);
         
         [self showAlertMessageWithTitle:[pinView.annotation title] message:NSLocalizedString(@"SELECT_OPTION_TO_COPY", nil)
                              completion:nil
                                 actions:[NSArray arrayWithObjects:
                                          
-                                         [UIAlertAction actionWithTitle:[NSString stringWithFormat:@"%@ %@", copyPrefix, NSLocalizedString(@"HOSTNAME", nil)] style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                         [UIAlertAction actionWithTitle:NSLocalizedString(@"HOSTNAME", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                                                 [[UIPasteboard generalPasteboard] setString:[[extendedAnnotation lookupModel] hostname]];
                                              }
                                            ],
                                          
-                                         [UIAlertAction actionWithTitle:[NSString stringWithFormat:@"%@ %@", copyPrefix, NSLocalizedString(@"IP_ADDRESS", nil)] style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                         [UIAlertAction actionWithTitle:NSLocalizedString(@"IP_ADDRESS", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                                                 [[UIPasteboard generalPasteboard] setString:[[extendedAnnotation lookupModel] ip]];
                                              }
                                            ],
                                          
-                                         [UIAlertAction actionWithTitle:[NSString stringWithFormat:@"%@ %@", copyPrefix, NSLocalizedString(@"LOCATION", nil)] style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                         [UIAlertAction actionWithTitle:NSLocalizedString(@"LOCATION", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                                                 [[UIPasteboard generalPasteboard] setString:[[extendedAnnotation lookupModel] getLocationString]];
                                              }
                                            ],
                                          
-                                         [UIAlertAction actionWithTitle:[NSString stringWithFormat:@"%@ %@", copyPrefix, NSLocalizedString(@"ORGANIZATION", nil)] style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                         [UIAlertAction actionWithTitle:NSLocalizedString(@"ORGANIZATION", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                                                 [[UIPasteboard generalPasteboard] setString:[[extendedAnnotation lookupModel] org]];
                                              }
                                            ],
