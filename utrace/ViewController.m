@@ -82,6 +82,10 @@
     //[[UIPasteboard generalPasteboard] copy:<#(nullable id)#>]
 }
 
+- (void)mapView:(MKMapView *)mapViewL didAddAnnotationViews:(NSArray<MKAnnotationView *> *)views {
+    [mapViewL selectAnnotation:[[views lastObject] annotation] animated:YES];
+}
+
 - (void)onRequestSuccess:(NSString *)responseSting withJSON:(NSDictionary *)responseJSON {
     [super onRequestSuccess:responseSting withJSON:responseJSON];
     
