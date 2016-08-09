@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CustomLabel.h"
+
 #import "const.h"
 #import "LookupModel.h"
 

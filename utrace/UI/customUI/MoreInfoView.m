@@ -22,16 +22,13 @@
     if(self) {
         [self setTranslatesAutoresizingMaskIntoConstraints:NO];
         [self setupConstraints];
-        
         [self setupLabels];
-        [self setBackgroundColor:[UIColor lightGrayColor]];
     }
     
     return self;
 }
 
 - (void)setupConstraints {
-    
     NSLayoutConstraint *width = [NSLayoutConstraint constraintWithItem:self
                                                              attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual
                                                                 toItem:nil
@@ -42,7 +39,7 @@
                                                               attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual
                                                                  toItem:nil
                                                               attribute:NSLayoutAttributeNotAnAttribute multiplier:1
-                                                               constant:100];
+                                                               constant:110];
     
     [self addConstraint:width];
     [self addConstraint:height];
@@ -50,24 +47,23 @@
 
 - (void)setupLabels {
     //ip
-    UILabel *addressLbl = [[UILabel alloc] init];
+    CustomLabel *addressLbl = [[CustomLabel alloc] initWithBoldFont:YES];
     [addressLbl setText:@"IP address:"];
     [self addSubview:addressLbl];
-
-    [self addContstraintsForLabel:addressLbl relativeMarginTo:self];
+    [self addMarginContstraintsForLabel:addressLbl relativeMarginTo:self topMultiplier:1.0 isFirstLabel:YES];
     
-    UILabel *addressLblValue = [[UILabel alloc] init];
+    CustomLabel *addressLblValue = [[CustomLabel alloc] init];
     [addressLblValue setText:[lookupModel ip]];
     [self addSubview:addressLblValue];
     
-    [self addContstraintsForLabel:addressLblValue relativeMarginTo:addressLbl];
+    [self addMarginContstraintsForLabel:addressLblValue relativeMarginTo:addressLbl topMultiplier:1.0 isFirstLabel:NO];
     
     //location
-    UILabel *locationLbl = [[UILabel alloc] init];
+    CustomLabel *locationLbl = [[CustomLabel alloc] initWithBoldFont:YES];
     [locationLbl setText:@"Location:"];
     [self addSubview:locationLbl];
     
-    [self addContstraintsForLabel:locationLbl relativeMarginTo:addressLblValue];
+    [self addMarginContstraintsForLabel:locationLbl relativeMarginTo:addressLblValue topMultiplier:1.1 isFirstLabel:NO];
     
     NSString *locationString = @"";
     
@@ -83,14 +79,14 @@
         locationString = [locationString stringByAppendingString:[lookupModel country]];
     }
     
-    UILabel *locationLblVal = [[UILabel alloc] init];
+    CustomLabel *locationLblVal = [[CustomLabel alloc] init];
     [locationLblVal setText:locationString];
     [self addSubview:locationLblVal];
     
-    [self addContstraintsForLabel:locationLblVal relativeMarginTo:locationLbl];
+    [self addMarginContstraintsForLabel:locationLblVal relativeMarginTo:locationLbl topMultiplier:1.0 isFirstLabel:NO];
 }
 
-- (void)addContstraintsForLabel:(UILabel *)label relativeMarginTo:(UIView *)relativeItem {
+- (void)addMarginContstraintsForLabel:(UILabel *)label relativeMarginTo:(UIView *)relativeItem topMultiplier:(double)topMultiplier isFirstLabel:(BOOL)isFirstLabel {
     [label setTranslatesAutoresizingMaskIntoConstraints:NO];
     [label setTextAlignment:NSTextAlignmentCenter];
     
@@ -108,11 +104,20 @@
                                                       constant:0.0]];
     
     //top margin
-    [self addConstraint:[NSLayoutConstraint constraintWithItem:label
-                                                     attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual
-                                                        toItem:relativeItem
-                                                     attribute:NSLayoutAttributeTop multiplier:1.5
-                                                      constant:UI_MARGIN]];
+    if(isFirstLabel) {
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:label
+                                                         attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual
+                                                            toItem:self
+                                                         attribute:NSLayoutAttributeTop multiplier:1.0
+                                                          constant:UI_MARGIN]];
+    }else{
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:label
+                                                         attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual
+                                                            toItem:relativeItem
+                                                         attribute:NSLayoutAttributeBottom multiplier:topMultiplier
+                                                          constant:0.0]];
+    }
+    
     //left margin
     [self addConstraint:[NSLayoutConstraint constraintWithItem:label
                                                      attribute:NSLayoutAttributeLeftMargin relatedBy:NSLayoutRelationEqual
