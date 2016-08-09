@@ -30,6 +30,8 @@
 
 - (void)setDefaultValues {
     [self setFont:[UIFont systemFontOfSize:REGULAR_FONT_SIZE]];
+    [self setAdjustsFontSizeToFitWidth:YES];
+    [self setMinimumScaleFactor:0.5];
 }
 
 - (void)setBoldDefaultValues {
