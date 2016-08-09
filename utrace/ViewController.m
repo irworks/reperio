@@ -38,6 +38,7 @@
         [mapView deselectAnnotation:annotation animated:YES];
     }
     
+    [searchField resignFirstResponder];
     HTTPRequest *request = [[HTTPRequest alloc] initWithURL:REST_BASE_URL withMethod:@"POST" withParameters:@{@"query" : [searchField text]}];
     [request setDelegate:self];
     [request setDebug:YES];
