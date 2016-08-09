@@ -62,8 +62,6 @@
     
     [pinView setCanShowCallout:YES];
     [pinView setRightCalloutAccessoryView:[UIButton buttonWithType:UIButtonTypeInfoDark]];
-    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(annotationInfoButtonClicked:)];
-    [[pinView rightCalloutAccessoryView] addGestureRecognizer:tapGesture];
     
     EMKPointAnnotation *extendedAnnotation = nil;
     
@@ -77,9 +75,35 @@
     return pinView;
 }
 
-- (void)annotationInfoButtonClicked:(id)sender {
-    [self showAlertMessageWithTitle:APP_NAME message:@"not yet implemented"];
-    //[[UIPasteboard generalPasteboard] copy:<#(nullable id)#>]
+- (void)mapView:(MKMapView *)mapViewL annotationView:(MKAnnotationView *)pinView calloutAccessoryControlTapped:(UIControl *)control {
+    if([pinView.annotation isKindOfClass:[EMKPointAnnotation class]]) {
+        EMKPointAnnotation *extendedAnnotation = (EMKPointAnnotation *)pinView.annotation;
+        NSString *copyPrefix = NSLocalizedString(@"COPY", nil);
+        
+        [self showAlertMessageWithTitle:[pinView.annotation title] message:NSLocalizedString(@"SELECT_OPTION_TO_COPY", nil)
+                             completion:nil
+                                actions:[NSArray arrayWithObjects:
+                                         
+                                         [UIAlertAction actionWithTitle:[NSString stringWithFormat:@"%@ %@", copyPrefix, NSLocalizedString(@"HOSTNAME", nil)] style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                                [[UIPasteboard generalPasteboard] setString:[[extendedAnnotation lookupModel] hostname]];
+                                             }
+                                           ],
+                                         
+                                         [UIAlertAction actionWithTitle:[NSString stringWithFormat:@"%@ %@", copyPrefix, NSLocalizedString(@"IP", nil)] style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                                [[UIPasteboard generalPasteboard] setString:[[extendedAnnotation lookupModel] ip]];
+                                             }
+                                           ],
+                                         
+                                         [UIAlertAction actionWithTitle:[NSString stringWithFormat:@"%@ %@", copyPrefix, NSLocalizedString(@"ORGANIZATION", nil)] style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                                [[UIPasteboard generalPasteboard] setString:[[extendedAnnotation lookupModel] orig]];
+                                             }
+                                           ],
+                                         
+                                         [UIAlertAction actionWithTitle:NSLocalizedString(@"CANCEL", nil) style:UIAlertActionStyleCancel handler:nil],
+                                         
+                                         nil]
+         ];
+    }
 }
 
 - (void)mapView:(MKMapView *)mapViewL didAddAnnotationViews:(NSArray<MKAnnotationView *> *)views {
