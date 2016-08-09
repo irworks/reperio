@@ -25,6 +25,7 @@
 		F4A4A46F1D587FAE00A43A15 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A4A46E1D587FAE00A43A15 /* BaseModel.m */; };
 		F4A4A4731D587FF100A43A15 /* LookupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A4A4721D587FF100A43A15 /* LookupModel.m */; };
 		F4A4A4761D5A66BA00A43A15 /* CustomLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A4A4751D5A66BA00A43A15 /* CustomLabel.m */; };
+		F4A4A4791D5A806D00A43A15 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F4A4A47B1D5A806D00A43A15 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,8 @@
 		F4A4A4721D587FF100A43A15 /* LookupModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LookupModel.m; path = API/Models/LookupModel.m; sourceTree = "<group>"; };
 		F4A4A4741D5A66BA00A43A15 /* CustomLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomLabel.h; path = UI/customUI/CustomLabel.h; sourceTree = "<group>"; };
 		F4A4A4751D5A66BA00A43A15 /* CustomLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomLabel.m; path = UI/customUI/CustomLabel.m; sourceTree = "<group>"; };
+		F4A4A47A1D5A806D00A43A15 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F4A4A47C1D5A807A00A43A15 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				F4A4A45B1D57E2C100A43A15 /* const.h */,
+				F4A4A47B1D5A806D00A43A15 /* Localizable.strings */,
 				F4A4A4251D57478900A43A15 /* AppDelegate.h */,
 				F4A4A4261D57478900A43A15 /* AppDelegate.m */,
 				F4A4A46C1D587DC800A43A15 /* API */,
@@ -354,6 +358,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = F4A4A4161D57478900A43A15;
 			productRefGroup = F4A4A4201D57478900A43A15 /* Products */;
@@ -373,6 +378,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4A4A4321D57478900A43A15 /* LaunchScreen.storyboard in Resources */,
+				F4A4A4791D5A806D00A43A15 /* Localizable.strings in Resources */,
 				F4A4A42F1D57478900A43A15 /* Assets.xcassets in Resources */,
 				F4A4A42D1D57478900A43A15 /* Main.storyboard in Resources */,
 			);
@@ -551,6 +557,16 @@
 				F4A4A4311D57478900A43A15 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F4A4A47B1D5A806D00A43A15 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F4A4A47A1D5A806D00A43A15 /* en */,
+				F4A4A47C1D5A807A00A43A15 /* de */,
+			);
+			name = Localizable.strings;
+			path = locals;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

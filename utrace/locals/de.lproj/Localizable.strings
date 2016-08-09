@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  utrace
+
+  Created by Ilja Rozhko on 09.08.16.
+  Copyright © 2016 IR Works. All rights reserved.
+*/
+
+"COPY"          = "Kopieren";
+"CANCEL"        = "Abbrechen";
+
+"SELECT_OPTION_TO_COPY" = "Wählen Sie eine Option aus der Liste aus, um die entsprechenden Daten des Servers in die Zwischenablage zu kopieren.";
+
+"HOSTNAME"      = "Hostname";
+"IP_ADDRESS"    = "IP-Adresse";
+"LOCATION"      = "Ort";
+"ORGANIZATION"  = "Organization";
