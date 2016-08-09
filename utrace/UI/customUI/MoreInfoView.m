@@ -48,7 +48,7 @@
 - (void)setupLabels {
     //ip
     CustomLabel *addressLbl = [[CustomLabel alloc] initWithBoldFont:YES];
-    [addressLbl setText:@"IP address:"];
+    [addressLbl setText:[NSLocalizedString(@"IP_ADDRESS", nil) stringByAppendingString:@":"]];
     [self addSubview:addressLbl];
     [self addMarginContstraintsForLabel:addressLbl relativeMarginTo:self topMultiplier:1.0 isFirstLabel:YES];
     
@@ -60,7 +60,7 @@
     
     //location
     CustomLabel *locationLbl = [[CustomLabel alloc] initWithBoldFont:YES];
-    [locationLbl setText:@"Location:"];
+    [locationLbl setText:[NSLocalizedString(@"Location", nil) stringByAppendingString:@":"]];
     [self addSubview:locationLbl];
     
     [self addMarginContstraintsForLabel:locationLbl relativeMarginTo:addressLblValue topMultiplier:1.1 isFirstLabel:NO];

@@ -89,7 +89,7 @@
                                              }
                                            ],
                                          
-                                         [UIAlertAction actionWithTitle:[NSString stringWithFormat:@"%@ %@", copyPrefix, NSLocalizedString(@"IP", nil)] style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                         [UIAlertAction actionWithTitle:[NSString stringWithFormat:@"%@ %@", copyPrefix, NSLocalizedString(@"IP_ADDRESS", nil)] style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                                                 [[UIPasteboard generalPasteboard] setString:[[extendedAnnotation lookupModel] ip]];
                                              }
                                            ],
