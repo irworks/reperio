@@ -29,6 +29,10 @@
 }
 
 - (IBAction)searchBtnClicked:(id)sender {
+    for(MKPointAnnotation *annotation in [mapView annotations]) {
+        [mapView deselectAnnotation:annotation animated:YES];
+    }
+    
     HTTPRequest *request = [[HTTPRequest alloc] initWithURL:REST_BASE_URL withMethod:@"POST" withParameters:@{@"query" : [searchField text]}];
     [request setDelegate:self];
     [request setDebug:YES];
@@ -51,28 +55,24 @@
     [point setTitle:[element hostname]];
     
     [mapView addAnnotation:point];
-    [mapView selectAnnotation:point animated:YES];
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapViewL viewForAnnotation:(id<MKAnnotation>)annotation {
-    MKAnnotationView *pinView = [mapViewL dequeueReusableAnnotationViewWithIdentifier:PIN_IDENTIFIER];
+    MKAnnotationView *pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:PIN_IDENTIFIER];
     
-    if(!pinView) {
-        pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:PIN_IDENTIFIER];
-        [pinView setCanShowCallout:YES];
-        [pinView setRightCalloutAccessoryView:[UIButton buttonWithType:UIButtonTypeInfoDark]];
-        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(annotationInfoButtonClicked:)];
-        [[pinView rightCalloutAccessoryView] addGestureRecognizer:tapGesture];
-        
-        EMKPointAnnotation *extendedAnnotation = nil;
-        
-        if([pinView.annotation isKindOfClass:[EMKPointAnnotation class]]) {
-            extendedAnnotation = (EMKPointAnnotation *)pinView.annotation;
-            [extendedAnnotation setTitle:[[extendedAnnotation lookupModel] hostname]];
-        }
-        
-        [pinView setDetailCalloutAccessoryView:[[MoreInfoView alloc] initWithLookupModel:[extendedAnnotation lookupModel]]];
+    [pinView setCanShowCallout:YES];
+    [pinView setRightCalloutAccessoryView:[UIButton buttonWithType:UIButtonTypeInfoDark]];
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(annotationInfoButtonClicked:)];
+    [[pinView rightCalloutAccessoryView] addGestureRecognizer:tapGesture];
+    
+    EMKPointAnnotation *extendedAnnotation = nil;
+    
+    if([pinView.annotation isKindOfClass:[EMKPointAnnotation class]]) {
+        extendedAnnotation = (EMKPointAnnotation *)pinView.annotation;
+        [extendedAnnotation setTitle:[[extendedAnnotation lookupModel] hostname]];
     }
+    
+    [pinView setDetailCalloutAccessoryView:[[MoreInfoView alloc] initWithLookupModel:[extendedAnnotation lookupModel]]];
     
     return pinView;
 }
@@ -83,13 +83,17 @@
 }
 
 - (void)onRequestSuccess:(NSString *)responseSting withJSON:(NSDictionary *)responseJSON {
+    [super onRequestSuccess:responseSting withJSON:responseJSON];
+    
     LookupModel *lookupModel = [[LookupModel alloc] initWithString:responseSting error:nil];
     
-    [self addMarkerToMapAtLocation:[lookupModel loc] element:lookupModel];
     [self moveMapToLocation:[lookupModel loc]];
+    [self addMarkerToMapAtLocation:[lookupModel loc] element:lookupModel];
 }
 
 - (void)onRequestFail:(NSError *)error {
+    [super onRequestFail:error];
+    
     [self showAlertMessageWithTitle:APP_NAME message:[error localizedDescription]];
 }
 
