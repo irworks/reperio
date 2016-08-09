@@ -17,6 +17,6 @@
 @property (strong, nonatomic, nullable) NSString <Optional> *region;
 @property (strong, nonatomic, nullable) NSString <Optional> *country;
 @property (nonatomic) CLLocationCoordinate2D loc;
-@property (strong, nonatomic, nullable) NSString <Optional> *orig;
+@property (strong, nonatomic, nullable) NSString <Optional> *org;
 
 @end
