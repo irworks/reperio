@@ -95,6 +95,7 @@
                     <navigationItem key="navigationItem" title="reperio" id="a4Q-D1-g7X"/>
                     <connections>
                         <outlet property="mapView" destination="rIy-1K-RGV" id="SGy-Ay-tZf"/>
+                        <outlet property="searchBtn" destination="6UA-af-UYY" id="ucc-Nv-Z4j"/>
                         <outlet property="searchField" destination="xhO-Cu-SLp" id="y9v-01-cKe"/>
                     </connections>
                 </viewController>

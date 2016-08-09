@@ -16,6 +16,7 @@
 @interface ViewController : BaseViewController<MKMapViewDelegate> {
     __weak IBOutlet UITextField *searchField;
     __weak IBOutlet MKMapView *mapView;
+    __weak IBOutlet UIButton *searchBtn;
 }
 
 - (IBAction)searchBtnClicked:(id _Nonnull)sender;

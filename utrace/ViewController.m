@@ -28,6 +28,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)textFieldFinished:(id)sender {
+    [super textFieldFinished:sender];
+    [self searchBtnClicked:searchBtn];
+}
+
 - (IBAction)searchBtnClicked:(id)sender {
     for(MKPointAnnotation *annotation in [mapView annotations]) {
         [mapView deselectAnnotation:annotation animated:YES];
