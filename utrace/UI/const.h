@@ -17,3 +17,5 @@
 
 /* API */
 #define REST_BASE_URL @"https://api.irwks.cloud/ip/"
+
+#define NSLog(...)

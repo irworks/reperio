@@ -1,9 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--reperio-->
@@ -15,66 +19,65 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="domain.tld" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xhO-Cu-SLp">
-                                <rect key="frame" x="0.0" y="132" width="600" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <color key="tintColor" red="1" green="0.29803921570000003" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="132" width="375" height="50"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="1" green="0.29803921570000003" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="obX-dc-esY"/>
                                 </constraints>
-                                <color key="textColor" red="1" green="0.29803921570000003" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="0.29803921570000003" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="search"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6UA-af-UYY">
-                                <rect key="frame" x="0.0" y="202" width="600" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="202" width="375" height="50"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="5gm-Wn-HPz"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Search">
-                                    <color key="titleColor" red="1" green="0.29803921570000003" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="1" green="0.29803921570000003" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="searchBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LvQ-O4-DVy"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a domain or IP-Address to lookup" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUt-TX-Hfs">
-                                <rect key="frame" x="20" y="106" width="560" height="18"/>
+                                <rect key="frame" x="16" y="106" width="343" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="reperio" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfh-lE-Wa8">
-                                <rect key="frame" x="20" y="28" width="560" height="50"/>
+                                <rect key="frame" x="16" y="28" width="343" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Qb2-jA-yGZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="31"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lookup results" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHS-Mx-bbt">
-                                <rect key="frame" x="20" y="274" width="560" height="18"/>
+                                <rect key="frame" x="20" y="274" width="335" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" showsBuildings="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rIy-1K-RGV">
-                                <rect key="frame" x="0.0" y="300" width="600" height="300"/>
+                                <rect key="frame" x="0.0" y="300" width="375" height="367"/>
                             </mapView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.29803921568627451" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="0.29803921568627451" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="xhO-Cu-SLp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="5Ds-4j-SzB"/>
                             <constraint firstAttribute="trailing" secondItem="xhO-Cu-SLp" secondAttribute="trailing" id="5z0-gB-GEr"/>
                             <constraint firstItem="xhO-Cu-SLp" firstAttribute="top" secondItem="CUt-TX-Hfs" secondAttribute="bottom" constant="8" id="83R-br-IyM"/>
                             <constraint firstItem="rIy-1K-RGV" firstAttribute="top" secondItem="AHS-Mx-bbt" secondAttribute="bottom" constant="8" id="8go-eY-YKC"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rIy-1K-RGV" secondAttribute="bottom" id="BiO-OY-S5e"/>
                             <constraint firstItem="rIy-1K-RGV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="CnT-Oi-msv"/>
                             <constraint firstItem="CUt-TX-Hfs" firstAttribute="top" secondItem="tfh-lE-Wa8" secondAttribute="bottom" constant="28" id="Fdb-Tl-Cdx"/>
                             <constraint firstItem="tfh-lE-Wa8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="HZz-mZ-Kos"/>
@@ -87,6 +90,7 @@
                             <constraint firstItem="AHS-Mx-bbt" firstAttribute="top" secondItem="6UA-af-UYY" secondAttribute="bottom" constant="22" id="gYD-ja-Pmk"/>
                             <constraint firstItem="AHS-Mx-bbt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="hf7-GY-Fkn"/>
                             <constraint firstItem="xhO-Cu-SLp" firstAttribute="top" secondItem="CUt-TX-Hfs" secondAttribute="bottom" constant="8" id="hqo-tK-vY6"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rIy-1K-RGV" secondAttribute="bottom" id="nsS-WP-Vpf"/>
                             <constraint firstItem="tfh-lE-Wa8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="tHw-97-GTt"/>
                             <constraint firstAttribute="trailing" secondItem="6UA-af-UYY" secondAttribute="trailing" id="yFt-HI-fWr"/>
                             <constraint firstItem="6UA-af-UYY" firstAttribute="top" secondItem="xhO-Cu-SLp" secondAttribute="bottom" constant="20" id="zbt-pn-s8J"/>
